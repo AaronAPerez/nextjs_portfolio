@@ -86,29 +86,33 @@ const SkillCard = ({ category }: { category: SkillCategory }) => {
 };
 
 const Portfolio = () => {
-  const projects: Project[] = [
-    {
-      title: "Expense Tracker",
-      description: "Full-stack expense tracking application with TypeScript & .NET",
-      tech: ["TypeScript", "React", "Bootstrap", "C#", ".NET", "SQL Server"],
-      images: ["/expense-tracker-1.png"],
-      link: "#"
-    },
-    {
-      title: "West Valley Bowl",
-      description: "Modern business website redesign with responsive design",
-      tech: ["Bootstrap", "HTML5", "CSS3", "JavaScript"],
-      images: ["/"],
-      link: "#"
-    },
-    {
-      title: "Game WRLD",
-      description: "Video game database using RAWG.io API and modern stack",
-      tech: ["React", "TypeScript", "Tailwind", "C#", ".NET"],
-      images: ["/images/game-wrld-1"],
-      link: "#"
-    }
-  ];
+  const ProjectsSection = () => {
+    const projects = [
+      {
+        title: "Expense Tracker",
+        description: "Modern expense tracking application with real-time updates and detailed analytics",
+        tech: ["TypeScript", "React", "Bootstrap", "C#", ".NET", "SQL Server"],
+        images: ["/expense-tracker-1.png"],
+        link: "#",
+        gradientColors: ["#00ccb1", "#7b61ff", "#1ca0fb", "#ffc414"] // Teal to blue gradient
+      },
+      {
+        title: "West Valley Bowl",
+        description: "Contemporary business website with integrated booking system and dynamic content",
+        tech: ["Bootstrap", "HTML5", "CSS3", "JavaScript"],
+        images: ["/bowling-1.png"],
+        link: "#",
+        gradientColors: ["#ff6b6b", "#4ecdc4", "#45b7d1", "#96e6a1"] // Red to green gradient
+      },
+      {
+        title: "Game WRLD",
+        description: "Video game database featuring advanced search and filtering capabilities",
+        tech: ["React", "TypeScript", "Tailwind", "C#", ".NET"],
+        images: ["/game-wrld-1.png"],
+        link: "#",
+        gradientColors: ["#ff61d2", "#7d6aff", "#4cb5ff", "#00f2ea"] // Purple to cyan gradient
+      }
+    ];
 
   const skillCategories: SkillCategory[] = [
     {
@@ -135,7 +139,7 @@ const Portfolio = () => {
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-grid" />
         <div className="relative z-10 max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-12">
-            {/* Image Column */}
+            {/* Image Column
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -144,17 +148,17 @@ const Portfolio = () => {
             >
               <div className="relative w-64 h-64 rounded-full overflow-hidden border-2 border-blue-500/20">
                 <Image
-                  src="/images/profile/headshot.jpg" 
+                  src="/images/projects/Diploma_bgTransparent.png" 
                   alt="Aaron A. Perez"
                   layout="fill"
                   objectFit="cover"
-                  priority
-                  className="rounded-full"
+                  // priority
+                  // className="rounded-full"
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-transparent to-violet-500/10" />
               </div>
               <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-violet-500 opacity-20 blur-2xl rounded-full" />
-            </motion.div>
+            </motion.div> */}
 
             {/* Text Content Column */}
             <motion.div
@@ -162,9 +166,9 @@ const Portfolio = () => {
               animate={{ opacity: 1, y: 0 }}
               className="text-center lg:text-left space-y-6 lg:flex-1"
             >
-              <div className="inline-block px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20">
+              {/* <div className="inline-block px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20">
                 <span className="text-blue-400">Available for opportunities</span>
-              </div>
+              </div> */}
               
               <div className="space-y-2">
                 <h1 className="text-4xl md:text-6xl font-bold text-white">
@@ -176,7 +180,7 @@ const Portfolio = () => {
               </div>
               
               <p className="text-lg text-gray-400 max-w-2xl">
-                Building digital experiences code. Specialized in creating robust and scalable applications using React, .NET, and cloud technologies.
+                Building digital experiences with code. Specialized in creating robust and scalable applications using React, Typescript, .NET, and cloud technologies.
               </p>
 
               <div className="flex gap-4 justify-center lg:justify-start">
@@ -196,25 +200,50 @@ const Portfolio = () => {
                 </motion.button>
               </div>
             </motion.div>
+
+             {/* Image Column */}
+             <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="relative"
+            >
+              <div className="w-52 h-52 ">
+                <Image
+                  src="/images/projects/Diploma_bgTransparent.png" 
+                  alt="Aaron A. Perez"
+                  layout="fill"
+                  objectFit="cover"
+                  priority
+                  className="rounded-full"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-transparent to-violet-500/10" />
+             </div> 
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-violet-500 opacity-20 blur-2xl rounded-full" />
+              
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section className="py-20 px-4" id="projects">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-violet-600">
-            Featured Projects
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <ProjectCard key={index} project={project} />
-            ))}
-          </div>
-          
+      <section className="py-20 px-4 bg-gray-950" id="projects">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-800 to-gray-200">
+          Featured Projects
+        </h2>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {projects.map((project, index) => (
+            <ProjectCard 
+              key={index} 
+              project={project} 
+              gradientColors={project.gradientColors}
+            />
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Skills Section */}
       <section className="py-20 px-4 bg-black/40" id="skills">
@@ -231,8 +260,9 @@ const Portfolio = () => {
         </div>
       </section>
     </div>
-  );
-};
+  )
+}
+}
 
 export default Portfolio;
 // 'use client';

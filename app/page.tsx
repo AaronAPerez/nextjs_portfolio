@@ -8,9 +8,19 @@ import { BackgroundBeams } from './components/ui/background-beams';
 import { TextGenerateEffect } from './components/ui/TextGenerateEffect';
 import { FloatingNav } from './components/ui/FloatingNav';
 import { CardHoverEffectDemo } from './components/ui/HoverCard';
+import LocationMap from './components/ui/LocationMap';
+import ProjectShowcase from './components/ui/ProjectShowcase';
+import { Spotlight } from './components/ui/Spotlight';
+import SkillCards from './components/SkillCards';
+import SkillsSection from './components/SkillSection';
+import TracingBeam from './components/ui/tracing-beam';
+import Portfolio from './components/Portfolio';
+import HeroSection from './components/ui/HeroSection';
+import Hero from './components/ui/Hero';
+import PortfolioGrid from './components/ui/PortfolioGrid';
 
 
-// Dynamic imports for heavy components
+
 const SparklesCore = dynamic(
   () => import('./components/ui/SparklesCore').then(mod => mod.SparklesCore),
   {
@@ -80,7 +90,7 @@ export default function Home() {
           >
             <div className="relative w-40 h-40 mx-auto mb-8">
               <Image
-                src="/headshot.svg"
+                src="/images/projects/headshot-bgTranparent.png"
                 alt="Aaron A. Perez"
                 fill
                 className="rounded-full object-cover"
@@ -102,8 +112,8 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-violet-500">
                 Full-Stack Developer
               </h2>
-              <p className="mt-4 text-xl text-gray-400">
-                Building exceptional digital experiences
+              <p className="mt-4 text-md text-gray-400">
+                Building digital experiences with code, one line at a time.
               </p>
             </motion.div>
 
@@ -124,6 +134,11 @@ export default function Home() {
         </div>
       </section>
 
+      <Hero/>
+      <HeroSection/>
+
+      <PortfolioGrid/>
+
       {/* About Section with Tracing Beam */}
       <TracingBeam className="py-20">
         <div className="max-w-2xl mx-auto px-4">
@@ -142,7 +157,7 @@ export default function Home() {
         </div>
       </TracingBeam>
 
-      <SkillSection/>
+      <SkillsSection/>
       <SkillCards/>
 
       {/* Skills Section with Card Hover Effects */}
@@ -150,7 +165,7 @@ export default function Home() {
         <Spotlight />
         <div className="relative z-10">
           <h2 className="text-3xl font-bold text-center mb-16">Technical Skills</h2>
-        <BentoSkillGrid/>
+       <ProjectShowcase/>
         </div>
      
       </section>
@@ -174,6 +189,7 @@ export default function Home() {
           <LocationMap />
         </div>
       </section>
+      
 
       {/* Contact Section */}
       <section id="contact" className="py-20 relative">
@@ -327,19 +343,23 @@ export default function Home() {
 // import Grid from './components/ui/Grid';
 // import { HoverEffect } from './components/ui/HoverCardContainer';
 // import ProjectCard from './components/ui/ProjectCard';
-import { projects } from './components/Projects';
+// import { projects } from './components/Projects';
 // import EvervaultCard from './components/ui/Evervault-Card';
 // import SkillSection from './components/SkillSection';
 // import { BentoGrid } from './components/ui/BentoSkillsGrid';
 // import { CardHoverEffectDemo } from './components/ui/HoverCard';
 // import Avatar from "/images/profile/headshot.png";
-import TracingBeam from './components/ui/tracing-beam';
-import LocationMap from './components/ui/LocationMap';
-import SkillCards from './components/SkillCards';
-import SkillSection from './components/SkillSection';
-import { Spotlight } from './components/ui/Spotlight';
-import ProjectCard from './components/ui/ProjectCard';
-import { BentoSkillGrid } from './components/ui/BentoSkillsGrid';
+// import TracingBeam from './components/ui/tracing-beam';
+// import LocationMap from './components/ui/LocationMap';
+// import SkillCards from './components/SkillCards';
+// import SkillSection from './components/SkillSection';
+// import { Spotlight } from './components/ui/Spotlight';
+// import ProjectCard from './components/ui/ProjectCard';
+// import { BentoSkillGrid } from './components/ui/BentoGrid2';
+// import ProjectShowcase from './components/ui/ProjectShowcase';
+// import Portfolio from './components/Portfolio';
+// import Hero from './components/ui/Hero';
+// import HeroSection from './components/ui/HeroSection';
 
 
 // // Import project data

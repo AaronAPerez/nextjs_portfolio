@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={geist.className}>
-      <body className="bg-[#0F172A] text-white">
+      <body className=" text-white">
         <main className="min-h-screen">
           {children}
         </main>

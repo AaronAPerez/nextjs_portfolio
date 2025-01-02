@@ -1,45 +1,63 @@
 export const theme = {
-    colors: {
-      primary: {
-        from: '#0F172A',  // Deep navy
-        to: '#1E293B',    // Rich slate
-      },
-      accent: {
-        from: '#3B82F6',  // Electric blue
-        to: '#2563EB',    // Royal blue
-      },
-        background: {
-        dark: '#020617',  // Near black
-        light: '#F8FAFC',
-      },
-      text: {
-        primary: '#F8FAFC',
-        secondary: '#64748B',
-        accent: '#3B82F6',
-      },
-      card: {
-        background: 'rgba(15, 23, 42, 0.9)',
-        border: 'rgba(59, 130, 246, 0.2)',
-      },
+  colors: {
+    primary: {
+      // deep background
+      from: '#1a1a1d',
+      to: '#2D2D34',
     },
+    accent: {
+      // Twitter Blue with contrast
+      from: '#1DA1F2',
+      to: '#0C7ABF',
+    },
+    background: {
+      // Dark theme
+      dark: '#121214',
+      // Light theme 
+      light: '#FAFAFA',
+    },
+    text: {
+      // High contrast text colors
+      primary: '#FFFFFF',
+      secondary: '#A3A3A3',
+      accent: '#1DA1F2',
+    },
+    card: {
+      // Card backgrounds with contrast
+      background: 'rgba(32, 32, 36, 0.95)',
+      border: 'rgba(66, 153, 225, 0.2)',
+    },
+    status: {
+      // Success/Error states with contrast
+      success: '#4CAF50',
+      error: '#DC2626',
+      warning: '#F59E0B',
+      info: '#0EA5E9',
+    },
+    // Gradients
     gradients: {
-      primary: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)',
-      accent: 'linear-gradient(135deg, #3B82F6 0%, #2563EB 100%)',
-      card: 'linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95))',
-      glow: 'radial-gradient(circle at center, rgba(59, 130, 246, 0.15) 0%, transparent 70%)',
-    },
-    shadows: {
-      card: '0 4px 20px rgba(15, 23, 42, 0.5)',
-      button: '0 4px 12px rgba(59, 130, 246, 0.3)',
-      glow: '0 0 40px rgba(59, 130, 246, 0.2)',
-    },
-    effects: {
-      glassMorphism: {
-        background: 'rgba(15, 23, 42, 0.7)',
-        backdropFilter: 'blur(12px)',
-      },
-      neonGlow: {
-        boxShadow: '0 0 20px rgba(59, 130, 246, 0.5)',
-      }
+      brand: 'linear-gradient(135deg, #1DA1F2 0%, #0C7ABF 100%)',
+      accent: 'linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%)',
+      highlight: 'linear-gradient(135deg, #F472B6 0%, #EC4899 100%)',
     }
-  };
+  },
+  shadows: {
+    // Shadow system
+    sm: '0 2px 4px rgba(0, 0, 0, 0.1)',
+    md: '0 4px 6px rgba(0, 0, 0, 0.1)',
+    lg: '0 10px 15px rgba(0, 0, 0, 0.1)',
+    xl: '0 20px 25px rgba(0, 0, 0, 0.1)',
+    highlight: '0 0 20px rgba(29, 161, 242, 0.2)',
+  },
+  effects: {
+    glassMorphism: {
+      background: 'rgba(32, 32, 36, 0.8)',
+      backdropFilter: 'blur(8px)',
+    },
+    glow: {
+      // Glow effects
+      primary: '0 0 20px rgba(29, 161, 242, 0.2)',
+      accent: '0 0 20px rgba(124, 58, 237, 0.2)',
+    }
+  }
+};

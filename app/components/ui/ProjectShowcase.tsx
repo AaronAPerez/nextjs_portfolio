@@ -19,7 +19,7 @@ const projects: Project[] = [
   {
     title: "Expense Tracker",
     description: "Full-stack expense tracking application built with TypeScript and React. Features real-time updates, category management, and detailed financial analytics.",
-    image: "/images/projects/expense-tracker/screenshot1.jpg",
+    image: "/images/projects/expense-tracker-1.png",
     demoLink: "#",
     codeLink: "#",
     tech: ["TypeScript", "React", "Bootstrap", ".NET", "SQL Server"]
@@ -27,7 +27,7 @@ const projects: Project[] = [
   {
     title: "West Valley Bowl",
     description: "Modern business website redesign featuring responsive layouts, online booking system, and dynamic content management for a local bowling alley.",
-    image: "/images/projects/bowling-site/screenshot1.jpg",
+    image: "/images/projects/bowling-site/bowling-1.png",
     demoLink: "#",
     codeLink: "#",
     tech: ["Bootstrap", "HTML5", "CSS3", "JavaScript"]
@@ -35,7 +35,7 @@ const projects: Project[] = [
   {
     title: "Game WRLD",
     description: "Video game database application using RAWG.io API. Features advanced search, filtering, and user collections with a modern, responsive interface.",
-    image: "/images/projects/game-wrld/screenshot1.jpg",
+    image: "/images/projects/game-wrld/game-wrld-1.png",
     demoLink: "#",
     codeLink: "#",
     tech: ["React", "TypeScript", "Tailwind", ".NET"]
@@ -116,7 +116,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
 const ProjectShowcase = () => {
   return (
-    <section className="py-20 relative">
+    <section className="py-0 relative">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 via-transparent to-violet-500/5" />
       
@@ -136,7 +136,7 @@ const ProjectShowcase = () => {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 items-start">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
