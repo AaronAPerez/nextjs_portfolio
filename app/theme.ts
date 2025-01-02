@@ -8,12 +8,9 @@ export const theme = {
         from: '#3B82F6',  // Electric blue
         to: '#2563EB',    // Royal blue
       },
-      background: {
-        dark: '#fff',  // Near black
+        background: {
+        dark: '#020617',  // Near black
         light: '#F8FAFC',
-      // background: {
-      //   dark: '#020617',  // Near black
-      //   light: '#F8FAFC',
       },
       text: {
         primary: '#F8FAFC',

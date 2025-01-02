@@ -91,21 +91,21 @@ const Portfolio = () => {
       title: "Expense Tracker",
       description: "Full-stack expense tracking application with TypeScript & .NET",
       tech: ["TypeScript", "React", "Bootstrap", "C#", ".NET", "SQL Server"],
-      images: ["/api/placeholder/400/320"],
+      images: ["/expense-tracker-1.png"],
       link: "#"
     },
     {
       title: "West Valley Bowl",
       description: "Modern business website redesign with responsive design",
       tech: ["Bootstrap", "HTML5", "CSS3", "JavaScript"],
-      images: ["/api/placeholder/400/320"],
+      images: ["/"],
       link: "#"
     },
     {
       title: "Game WRLD",
       description: "Video game database using RAWG.io API and modern stack",
       tech: ["React", "TypeScript", "Tailwind", "C#", ".NET"],
-      images: ["/api/placeholder/400/320"],
+      images: ["/images/game-wrld-1"],
       link: "#"
     }
   ];
@@ -144,7 +144,7 @@ const Portfolio = () => {
             >
               <div className="relative w-64 h-64 rounded-full overflow-hidden border-2 border-blue-500/20">
                 <Image
-                  src="/headshot.jpg" 
+                  src="/images/profile/headshot.jpg" 
                   alt="Aaron A. Perez"
                   layout="fill"
                   objectFit="cover"
@@ -176,7 +176,7 @@ const Portfolio = () => {
               </div>
               
               <p className="text-lg text-gray-400 max-w-2xl">
-                Building modern web experiences with cutting-edge technology. Specialized in creating robust and scalable applications using React, .NET, and cloud technologies.
+                Building digital experiences code. Specialized in creating robust and scalable applications using React, .NET, and cloud technologies.
               </p>
 
               <div className="flex gap-4 justify-center lg:justify-start">
@@ -212,6 +212,7 @@ const Portfolio = () => {
               <ProjectCard key={index} project={project} />
             ))}
           </div>
+          
         </div>
       </section>
 

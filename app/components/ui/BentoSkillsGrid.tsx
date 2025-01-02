@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import React from "react";
 
-export const BentoGrid = ({
+export const BentoSkillGrid = ({
   className,
   children,
 }: {

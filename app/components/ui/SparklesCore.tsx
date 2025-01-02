@@ -1,8 +1,9 @@
-'use client'
+'use client';
 
 import { useEffect, useState } from "react";
-import { Container, Engine, tsParticles } from "@tsparticles/engine";
-
+import type { Container, Engine, ISourceOptions } from "@tsparticles/engine";
+import { tsParticles } from "@tsparticles/engine";
+import { loadSlim } from "@tsparticles/slim";
 
 interface SparklesCoreProps {
   id: string;
@@ -28,25 +29,34 @@ export const SparklesCore = ({
   useEffect(() => {
     const initParticles = async () => {
       try {
-        await loadFull(tsParticles);
-
-        const particlesContainer = await tsParticles.load(id, {
+        await loadSlim(tsParticles);
+        
+        const options: ISourceOptions = {
           fullScreen: { enable: false },
+          background: {
+            color: background,
+          },
           fpsLimit: 120,
           interactivity: {
             events: {
-              onClick: { enable: true, mode: "push" },
+              onClick: {
+                enable: true,
+                mode: "push",
+              },
               onHover: {
                 enable: true,
                 mode: "repulse",
-                parallax: { enable: false, force: 60, smooth: 10 }
               },
-              resize: true
             },
             modes: {
-              push: { quantity: 4 },
-              repulse: { distance: 200, duration: 0.4 }
-            }
+              push: {
+                quantity: 4,
+              },
+              repulse: {
+                distance: 200,
+                duration: 0.4,
+              },
+            },
           },
           particles: {
             color: {
@@ -57,55 +67,56 @@ export const SparklesCore = ({
               distance: 150,
               enable: true,
               opacity: 0.5,
-              width: 1
+              width: 1,
             },
             move: {
               direction: "none",
               enable: true,
               outModes: {
-                default: "bounce"
+                default: "bounce",
               },
               random: false,
               speed: 1,
-              straight: false
+              straight: false,
             },
             number: {
               density: {
                 enable: true,
-                area: particleDensity
+                area: particleDensity,
               },
-              value: 80
+              value: 80,
             },
             opacity: {
-              value: 0.5
+              value: 0.5,
             },
             shape: {
-              type: "circle"
+              type: "circle",
             },
             size: {
-              value: { min: minSize, max: maxSize }
-            }
+              value: { min: minSize, max: maxSize },
+            },
           },
-          detectRetina: true
-        });
+          detectRetina: true,
+        };
 
-        if (particlesContainer) {
-          setInitialized(true);
-        }
+        await tsParticles.load(options);
+        setInitialized(true);
       } catch (error) {
         console.error("Error initializing particles:", error);
       }
     };
 
-    if (!initialized) {
-      initParticles();
-    }
+    initParticles();
 
     return () => {
-      tsParticles.domItem(id)?.destroy();
+      const container = tsParticles.domItem(id);
+      if (container) {
+        container.destroy();
+      }
     };
-  }, [id, background, minSize, maxSize, particleColor, particleDensity, initialized]);
+  }, [id, background, minSize, maxSize, particleDensity, particleColor]);
 
-  return <div className={className} id={id} />;
+  return (
+    <div id={id} className={className} />
+  );
 };
-

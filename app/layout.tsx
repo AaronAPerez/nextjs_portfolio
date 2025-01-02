@@ -1,46 +1,28 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "./Provider";
-import Hero from "./components/ui/Hero";
-import HeroSection from "./components/ui/HeroSection";
 
-
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const geist = Geist({
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Aaron A. Perez - FullStack Developer',
   description: 'Modern web developer portfolio showcasing full-stack projects',
-  openGraph: {
-    title: 'Your Name - Portfolio',
-    description: 'Full Stack Developer Portfolio',
-    images: ['/og-image.png'],
-  },
-}
-
+};
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-
-    <html lang="en" suppressHydrationWarning>
-       
-      <body>
-     <HeroSection/>
+    <html lang="en" className={geist.className}>
+      <body className="bg-[#0F172A] text-white">
+        <main className="min-h-screen">
           {children}
+        </main>
       </body>
     </html>
   );
