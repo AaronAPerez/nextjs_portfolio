@@ -23,6 +23,7 @@ interface SkillSectionProps {
 const ProjectCard = ({ title, description, tech, link }: ProjectCardProps) => {
   return (
     <div className="relative group">
+      <h1>Portfolio Grid ui</h1>
       <div className="p-6 rounded-xl bg-[#0F172A]/90 backdrop-blur-xl border border-[#3B82F6]/20">
         <h3 className="text-xl font-bold text-[#F8FAFC] mb-3">{title}</h3>
         <p className="text-[#64748B] text-sm leading-relaxed">{description}</p>

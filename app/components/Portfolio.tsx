@@ -86,7 +86,7 @@ const SkillCard = ({ category }: { category: SkillCategory }) => {
 };
 
 const Portfolio = () => {
-  const ProjectsSection = () => {
+
     const projects = [
       {
         title: "Expense Tracker",
@@ -139,6 +139,7 @@ const Portfolio = () => {
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-grid" />
         <div className="relative z-10 max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-12">
+            <h1>Hero Section Component</h1>
             {/* Image Column
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
@@ -238,7 +239,7 @@ const Portfolio = () => {
             <ProjectCard 
               key={index} 
               project={project} 
-              gradientColors={project.gradientColors}
+              // gradientColors={project.gradientColors}
             />
           ))}
         </div>
@@ -262,7 +263,7 @@ const Portfolio = () => {
     </div>
   )
 }
-}
+
 
 export default Portfolio;
 // 'use client';

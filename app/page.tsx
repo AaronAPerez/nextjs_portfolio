@@ -18,6 +18,11 @@ import Portfolio from './components/Portfolio';
 import HeroSection from './components/ui/HeroSection';
 import Hero from './components/ui/Hero';
 import PortfolioGrid from './components/ui/PortfolioGrid';
+import IntroductionSection from './components/ui/IntroductionSection';
+import LocationConnection from './components/LocationConnection';
+import Timeline from './components/Timeline';
+import ContactSection from './components/ui/ContactSection';
+import { BentoGridItem2 } from './components/ui/BentoGrid2';
 
 
 
@@ -67,8 +72,9 @@ export default function Home() {
       {/* Navigation */}
       <FloatingNav navItems={navItems} />
 
-      {/* Hero Section */}
+      {/* Hero Section 1*/}
       <section id="home" className="relative min-h-screen flex items-center justify-center">
+        <h1>HERO 1</h1>
         <div className="absolute inset-0">
           <SparklesCore
             id="hero-sparkles"
@@ -134,10 +140,184 @@ export default function Home() {
         </div>
       </section>
 
-      <Hero/>
-      <HeroSection/>
 
-      <PortfolioGrid/>
+
+
+          {/* Hero Section 2*/}
+            <section className="relative min-h-screen flex items-center justify-center px-4">
+              <h1>HERO 2</h1>
+              <div className="absolute inset-0 bg-grid-white/[0.02] bg-grid" />
+              <div className="relative z-10 max-w-6xl mx-auto">
+                <div className="flex flex-col lg:flex-row items-center gap-12">
+                  {/* Image Column */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                    className="relative"
+                  >
+                    <div className="relative w-64 h-64 rounded-full overflow-hidden border-2 border-blue-500/20">
+                      <Image
+                      src="/images/projects/headshot-bgTranparent.png"
+                        alt="Aaron A. Perez"
+                        layout="fill"
+                        objectFit="cover"
+                        priority
+                        className="rounded-full"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-transparent to-violet-500/10" />
+                    </div>
+                    <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-violet-500 opacity-20 blur-2xl rounded-full" />
+                  </motion.div>
+      
+                  {/* Text Content Column */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-center lg:text-left space-y-6 lg:flex-1"
+                  >
+                    {/* <div className="inline-block px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20">
+                      <span className="text-blue-400">Available for opportunities</span>
+                    </div> */}
+                    
+                    <div className="space-y-2">
+                      <h1 className="text-4xl md:text-6xl font-bold text-white">
+                        Aaron A. Perez
+                      </h1>
+                      <h2 className="text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-violet-600">
+                        Full-Stack Developer
+                      </h2>
+                    </div>
+                    
+                    <p className="text-lg text-gray-400 max-w-2xl">
+                      Building digital experiences code. Specialized in creating robust and scalable applications using React, .NET, and cloud technologies.
+                    </p>
+      
+                    <div className="flex gap-4 justify-center lg:justify-start">
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="px-6 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-violet-600 text-white font-medium"
+                      >
+                        View Projects
+                      </motion.button>
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="px-6 py-3 rounded-lg border border-blue-500/20 text-white hover:bg-blue-500/10"
+                      >
+                        Contact Me
+                      </motion.button>
+                    </div> 
+                    <div className="inline-block px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20">
+                      <span className="text-blue-400">Available for opportunities</span>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            </section>
+
+                  {/* Hero Section */}
+                  <section className="relative min-h-screen flex items-center justify-center px-4">
+                    <div className="absolute inset-0 bg-grid-white/[0.02] bg-grid" />
+                    <div className="relative z-10 max-w-6xl mx-auto">
+                      <div className="flex flex-col lg:flex-row items-center gap-12">
+                        <h1>Hero 3 Component</h1>
+            
+                        {/* Text Content Column */}
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className="text-center lg:text-left space-y-6 lg:flex-1"
+                        >
+                          <div className="inline-block px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20">
+                            <span className="text-blue-400">Available for opportunities</span>
+                          </div> 
+                          
+                          <div className="space-y-2">
+                            <h1 className="text-4xl md:text-6xl font-bold text-white">
+                              Aaron A. Perez
+                            </h1>
+                            <h2 className="text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-violet-600">
+                              Full-Stack Developer
+                            </h2>
+                          </div>
+                          
+                          <p className="text-lg text-gray-400 max-w-2xl">
+                            Building digital experiences with code. Specialized in creating robust and scalable applications using React, Typescript, .NET, and cloud technologies.
+                          </p>
+            
+                          <div className="flex gap-4 justify-center lg:justify-start">
+                            <motion.button
+                              whileHover={{ scale: 1.05 }}
+                              whileTap={{ scale: 0.95 }}
+                              className="px-6 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-violet-600 text-white font-medium"
+                            >
+                              View Projects
+                            </motion.button>
+                            <motion.button
+                              whileHover={{ scale: 1.05 }}
+                              whileTap={{ scale: 0.95 }}
+                              className="px-6 py-3 rounded-lg border border-blue-500/20 text-white hover:bg-blue-500/10"
+                            >
+                              Contact Me
+                            </motion.button>
+                          </div>
+                        </motion.div>
+
+                      {/* Image Column */}
+                          <motion.div
+                          initial={{ opacity: 0, scale: 0.5 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.5 }}
+                          className="relative"
+                        >
+                          <div className="relative w-64 h-64 rounded-full overflow-hidden border-2 border-blue-500/20">
+                            <Image
+                              src="/images/projects/Diploma_bgTransparent.png" 
+                              alt="Aaron A. Perez"
+                              layout="fill"
+                              objectFit="cover"
+                               priority
+                              className="rounded-full"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-transparent to-violet-500/10" />
+                          </div>
+                          <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-violet-500 opacity-20 blur-2xl rounded-full" />
+                        </motion.div> 
+            
+                         {/* Image Column
+                         <motion.div
+                          initial={{ opacity: 0, scale: 0.5 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.5 }}
+                          className="relative"
+                        >
+                          <div className="w-52 h-52 ">
+                            <Image
+                              src="/images/projects/Diploma_bgTransparent.png" 
+                              alt="Aaron A. Perez"
+                              layout="fill"
+                              objectFit="cover"
+                              priority
+                              className="rounded-full"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-transparent to-violet-500/10" />
+                         </div> 
+                          <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-violet-500 opacity-20 blur-2xl rounded-full" />
+                          
+                        </motion.div> */}
+                      </div>
+                    </div>
+                  </section>
+
+
+            <Hero/>
+            <HeroSection/>
+            
+            <PortfolioGrid/>
+            <Portfolio/>
+
 
       {/* About Section with Tracing Beam */}
       <TracingBeam className="py-20">
@@ -157,8 +337,45 @@ export default function Home() {
         </div>
       </TracingBeam>
 
-      <SkillsSection/>
-      <SkillCards/>
+
+
+         {/* Hero Section with Particles */}
+         <section className="relative h-screen">
+        <div className="h-screen w-full absolute inset-0">
+          <SparklesCore
+            id="tsparticlesfullpage"
+            background="transparent"
+            minSize={0.6}
+            maxSize={1.4}
+            particleDensity={100}
+            className="w-full h-full"
+            particleColor="#FFFFFF"
+          />
+        </div>
+        <Hero />
+      </section>
+      {/*Spotlight Section */}
+      <section className="relative py-20">
+        <Spotlight />
+        <div className="relative z-10">
+          <PortfolioGrid />
+        </div>
+      </section>
+      {/* Experience Timeline */}
+      <section className="relative py-20">
+        <BackgroundBeams />
+        <div className="relative z-10">
+          <Timeline />
+        </div>
+      </section>
+      {/* Contact Section */}
+      <section className="relative py-20">
+        <BackgroundBeams />
+        <div className="relative z-10">
+          <ContactSection />
+        </div>
+      </section>
+
 
       {/* Skills Section with Card Hover Effects */}
       <section id="skills" className="py-20 relative bg-black">
@@ -227,6 +444,111 @@ export default function Home() {
           </form>
         </div>
       </section>
+
+
+      <FloatingNav navItems={[]} />
+      
+
+       {/* Hero Section */}
+       <section className="relative min-h-screen flex items-center justify-center bg-black">
+         {/* Background Effects */}
+         <SparklesCore
+          id="hero-sparkles"
+          background="transparent"
+          minSize={0.6}
+          maxSize={1.4}
+          particleDensity={10}
+          className="absolute w-full h-full"
+          particleColor="yellow-400"
+        />
+        <BackgroundBeams className="absolute inset-0" />
+
+        {/* Profile Content */}
+        <div className="relative z-10 max-w-6xl mx-auto px-4">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            {/* Profile Image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="relative"
+            >
+              <div className="relative w-64 h-64 rounded-full overflow-hidden border-2 border-blue-500/20">
+                <img src="/images/profile/headshot.png"
+                  alt="Aaron A. Perez"
+                  // fill
+                  // priority
+                  className="object-cover rounded-full"
+                />
+                 <Image
+                  src={"/images/profile/headshot.png"}
+                  alt="Aaron A. Perez"
+                  fill
+                  priority
+                  className="object-cover rounded-full"
+                /> 
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-transparent to-violet-500/10" />
+              </div>
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-violet-500 opacity-20 blur-2xl rounded-full" />
+            </motion.div>
+
+            {/* Text Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center lg:text-left space-y-6 lg:flex-1"
+            >
+              <h1 className="text-4xl md:text-6xl font-bold text-white">
+                Aaron A. Perez
+              </h1>
+              <h2 className="text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-violet-600">
+                Full-Stack Developer
+              </h2>
+              <p className="text-lg text-gray-400">
+                Building modern web experiences with cutting-edge technology
+              </p>
+              <div className="inline-block px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20">
+                      <span className="text-blue-400">Available for opportunities</span>
+                    </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+ 
+
+     
+
+
+
+
+
+    
+
+
+
+      <div className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5 ">
+        <div className="max-w-7xl w-full ">
+         <BentoGridItem2 /> 
+        </div>
+      </div>
+
+
+
+      <section>
+        <SkillCards />
+      </section>
+      <section>
+        <SkillsSection />
+      </section>
+      <section>
+        <LocationConnection />
+      </section>
+   
+
+
+
+
+
     </div>
   );
 }
@@ -477,145 +799,3 @@ export default function Home() {
 //         </div>
 //       </section>
  
-
-//        {/* Hero Section */}
-//             <section className="relative min-h-screen flex items-center justify-center px-4">
-//               <div className="absolute inset-0 bg-grid-white/[0.02] bg-grid" />
-//               <div className="relative z-10 max-w-6xl mx-auto">
-//                 <div className="flex flex-col lg:flex-row items-center gap-12">
-//                   {/* Image Column */}
-//                   <motion.div
-//                     initial={{ opacity: 0, scale: 0.5 }}
-//                     animate={{ opacity: 1, scale: 1 }}
-//                     transition={{ duration: 0.5 }}
-//                     className="relative"
-//                   >
-//                     <div className="relative w-64 h-64 rounded-full overflow-hidden border-2 border-blue-500/20">
-//                       <Image
-//                         src="/images/profile/headshot.jpg" 
-//                         alt="Aaron A. Perez"
-//                         layout="fill"
-//                         objectFit="cover"
-//                         priority
-//                         className="rounded-full"
-//                       />
-//                       <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-transparent to-violet-500/10" />
-//                     </div>
-//                     <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-violet-500 opacity-20 blur-2xl rounded-full" />
-//                   </motion.div>
-      
-//                   {/* Text Content Column */}
-//                   <motion.div
-//                     initial={{ opacity: 0, y: 20 }}
-//                     animate={{ opacity: 1, y: 0 }}
-//                     className="text-center lg:text-left space-y-6 lg:flex-1"
-//                   >
-//                     {/* <div className="inline-block px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20">
-//                       <span className="text-blue-400">Available for opportunities</span>
-//                     </div> */}
-                    
-//                     <div className="space-y-2">
-//                       <h1 className="text-4xl md:text-6xl font-bold text-white">
-//                         Aaron A. Perez
-//                       </h1>
-//                       <h2 className="text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-violet-600">
-//                         Full-Stack Developer
-//                       </h2>
-//                     </div>
-                    
-//                     <p className="text-lg text-gray-400 max-w-2xl">
-//                       Building digital experiences code. Specialized in creating robust and scalable applications using React, .NET, and cloud technologies.
-//                     </p>
-      
-//                     {/* <div className="flex gap-4 justify-center lg:justify-start">
-//                       <motion.button
-//                         whileHover={{ scale: 1.05 }}
-//                         whileTap={{ scale: 0.95 }}
-//                         className="px-6 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-violet-600 text-white font-medium"
-//                       >
-//                         View Projects
-//                       </motion.button>
-//                       <motion.button
-//                         whileHover={{ scale: 1.05 }}
-//                         whileTap={{ scale: 0.95 }}
-//                         className="px-6 py-3 rounded-lg border border-blue-500/20 text-white hover:bg-blue-500/10"
-//                       >
-//                         Contact Me
-//                       </motion.button>
-//                     </div> */}
-//                                 <div className="inline-block px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20">
-//                       <span className="text-blue-400">Available for opportunities</span>
-//                     </div>
-//                   </motion.div>
-//                 </div>
-//               </div>
-//             </section>
-
-
-//             <IntroductionSection/>
-
-
-
-
-
-    
-
-
-
-//       <div className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5 ">
-//         <div className="max-w-7xl w-full ">
-//          <BentoGridItem /> 
-//         </div>
-//       </div>
-
-
-
-//       <section>
-//         <SkillCards />
-//       </section>
-//       <section>
-//         <SkillsSection />
-//       </section>
-//       <section>
-//         <LocationConnection />
-//       </section>
-//       {/* Hero Section with Particles */}
-//       <section className="relative h-screen">
-//         <div className="h-screen w-full absolute inset-0">
-//           <SparklesCore
-//             id="tsparticlesfullpage"
-//             background="transparent"
-//             minSize={0.6}
-//             maxSize={1.4}
-//             particleDensity={100}
-//             className="w-full h-full"
-//             particleColor="#FFFFFF"
-//           />
-//         </div>
-//         <Hero />
-//       </section>
-//       {/*Spotlight Section */}
-//       <section className="relative py-20">
-//         <Spotlight />
-//         <div className="relative z-10">
-//           <PortfolioGrid />
-//         </div>
-//       </section>
-//       {/* Experience Timeline */}
-//       <section className="relative py-20">
-//         <BackgroundBeams />
-//         <div className="relative z-10">
-//           <Timeline />
-//         </div>
-//       </section>
-//       {/* Contact Section */}
-//       <section className="relative py-20">
-//         <BackgroundBeams />
-//         <div className="relative z-10">
-//           <ContactSection />
-//         </div>
-//       </section>
-
-//     </main>
-//       );
-// }

@@ -25,6 +25,7 @@ const IntroductionSection = () => {
       {/* Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <h1>Introduction Section</h1>
           {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
